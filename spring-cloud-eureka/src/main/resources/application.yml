@@ -1,12 +1,57 @@
+spring:
+  application:
+    name: ClusterEureka
+
+---
 server:
   port: 7001
+
+spring:
+  profiles: eureka-7001
 
 # Eureka配置
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka-7001
+    instance-id: eureka-7001
   client:
-    register-with-eureka: false # 表示是否想eureka注册中心注册自己
-    fetch-registry: false # 如果为false表示自己就是注册中心
+    register-with-eureka: true # 表示是否想eureka注册中心注册自己
+    fetch-registry: true # 如果为false表示自己就是注册中心
     service-url: # 监控页面
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka-7002:7002/eureka,http://eureka-7003:7003/eureka
+
+---
+server:
+  port: 7002
+
+spring:
+  profiles: eureka-7002
+
+# Eureka配置
+eureka:
+  instance:
+    hostname: eureka-7002
+    instance-id: eureka-7002
+  client:
+    register-with-eureka: true # 表示是否想eureka注册中心注册自己
+    fetch-registry: true # 如果为false表示自己就是注册中心
+    service-url: # 监控页面
+      defaultZone: http://eureka-7003:7003/eureka,http://eureka-7001:7001/eureka
+
+---
+server:
+  port: 7003
+
+spring:
+  profiles: eureka-7003
+
+# Eureka配置
+eureka:
+  instance:
+    hostname: eureka-7003
+    instance-id: eureka-7003
+  client:
+    register-with-eureka: true # 表示是否想eureka注册中心注册自己
+    fetch-registry: true # 如果为false表示自己就是注册中心
+    service-url: # 监控页面
+      defaultZone: http://eureka-7001:7001/eureka,http://eureka-7002:7002/eureka
