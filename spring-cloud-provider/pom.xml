@@ -12,6 +12,17 @@
     <artifactId>spring-cloud-provider</artifactId>
 
     <dependencies>
+        <!--Eureka依赖-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-eureka -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <!--actuator完善监控信息-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <!--我们需要拿到实体类，所以要配置api-->
         <dependency>
             <groupId>com.study</groupId>
