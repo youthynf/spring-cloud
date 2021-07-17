@@ -1,0 +1,29 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: spring-cloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-single-7001:7001/eureka
+  instance:
+    instance-id: spring-cloud-zuul-9527
+    prefer-ip-address: true
+
+
+info:
+  app.name: spring-cloud-zuul-9527
+  company.name: study.springcloud.com
+zuul:
+  routes:
+    # 隐藏我们自己的服务名称，避免直接暴露
+    # http://www.springcloudstudy.com:9527/spring-cloud-provider/dept/get/1 -> http://www.springcloudstudy.com:9527/mydept/dept/get/1
+    mydept.serviceId: spring-cloud-provider
+    mydept.path: /mydept/**
+
+  # ignored-services: spring-cloud-provider # 配置实现不允许使用指定的服务名直接访问了
+  ignored-services: "*" # 配置实现不允许使用服务名直接访问了
+  prefix: /v1 # 访问路径统一需要增加公共的前缀  http://www.springcloudstudy.com:9527/v1/mydept/dept/get/1
