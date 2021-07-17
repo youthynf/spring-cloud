@@ -21,4 +21,7 @@ public interface DeptClientService {
 
     @PostMapping("/dept/add")
     public boolean addDept(Dept dept);
+
+    @GetMapping("/ribbon/getPort")
+    public String getPort();
 }

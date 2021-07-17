@@ -26,4 +26,9 @@ public class DeptConsumerFeignController {
     public List<Dept> list() {
         return this.deptClientService.queryAll();
     }
+
+    @GetMapping("/ribbon/getPort")
+    public String getPort() {
+        return this.deptClientService.getPort();
+    }
 }
