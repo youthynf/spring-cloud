@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Component
-@FeignClient(value = "SPRING-CLOUD-PROVIDER")
+@FeignClient(value = "SPRING-CLOUD-PROVIDER", fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
 
     @GetMapping("/dept/get/{id}")

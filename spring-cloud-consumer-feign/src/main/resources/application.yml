@@ -7,3 +7,8 @@ eureka:
     register-with-eureka: false # 不向eureka注册自己
     service-url:
       defaultZone: http://eureka-single-7001:7001/eureka
+
+# 开启降级feign.hystrix
+feign:
+  hystrix:
+    enabled: true
