@@ -1,2 +1,9 @@
 server:
   port: 90
+
+# Eureka配置
+eureka:
+  client:
+    register-with-eureka: false # 不向eureka注册自己
+    service-url:
+      defaultZone: http://eureka-single-7001:7001/eureka
