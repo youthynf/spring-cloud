@@ -2,6 +2,24 @@ spring:
   application:
     name: ClusterEureka
 
+  profiles:
+    active: eureka-single-7001
+
+---
+server:
+  port: 7001
+
+# Eureka配置
+eureka:
+  instance:
+    hostname: eureka-7001
+    instance-id: eureka-single-7001
+  client:
+    register-with-eureka: false # 表示是否想eureka注册中心注册自己
+    fetch-registry: false # 如果为false表示自己就是注册中心
+    service-url: # 监控页面
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
 ---
 server:
   port: 7001
