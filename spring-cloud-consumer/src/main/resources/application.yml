@@ -7,3 +7,7 @@ eureka:
     register-with-eureka: false # 不向eureka注册自己
     service-url:
       defaultZone: http://eureka-single-7001:7001/eureka
+    registry-fetch-interval-seconds: 5 # 刷新注册表间隔
+  instance:
+    lease-renewal-interval-in-seconds: 10 # 心跳续约间隔
+    lease-expiration-duration-in-seconds: 10 # 心跳过期时间

@@ -32,6 +32,12 @@ eureka:
       defaultZone: http://eureka-single-7001:7001/eureka
   instance:
     instance-id: spring-cloud-provider-8004 # 修改eureka上默认的描述信息：localhost:spring-cloud-provider:8001 --> spring-cloud-provider
+    # ******下面的操作用来配合被关闭的Eureka的自我保护机制******
+    prefer-ip-address: true
+    # Eureka客户端向服务心跳的时间间隔是1s，默认是30秒
+    lease-renewal-interval-in-seconds: 1
+    # Eureka服务端在收到一次心跳后等待时间上限是2s，默认是90s，超时将剔除该微服务，其实Eureka服务端已经设置了，可能就是也告诉服务提供者一下
+    lease-expiration-duration-in-seconds: 2
 
 # info配置，通过访问http://localhost:8004/actuator/info看到对应的信息
 info:
