@@ -1,0 +1,16 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: spring-cloud-config
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/null_317_2128/config_center.git # https，不是git
+          # 访问配置文件方式：
+          # http://localhost:3344/application-dev.yml
+          # http://localhost:3344/master/application-test.yml
+          # http://localhost:3344/application/dev/master
