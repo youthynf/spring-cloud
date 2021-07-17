@@ -14,6 +14,7 @@
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-consumer-feign</module>
         <module>spring-cloud-provider-hystrix</module>
+        <module>spring-cloud-hystrix-dashboard</module>
     </modules>
 
     <!--打包方式pom：用在父级工程或聚合工程中，用来做jar包的版本控制-->
