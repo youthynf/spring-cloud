@@ -23,6 +23,8 @@ zuul:
     # http://www.springcloudstudy.com:9527/spring-cloud-provider/dept/get/1 -> http://www.springcloudstudy.com:9527/mydept/dept/get/1
     mydept.serviceId: spring-cloud-provider
     mydept.path: /mydept/**
+    sleuthDept.serviceId: spring-cloud-sleuth
+    sleuthDept.path: /sluthDept/**
 
   # ignored-services: spring-cloud-provider # 配置实现不允许使用指定的服务名直接访问了
   ignored-services: "*" # 配置实现不允许使用服务名直接访问了

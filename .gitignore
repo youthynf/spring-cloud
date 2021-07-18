@@ -1,1 +1,27 @@
 .idea
+# 忽略target目录
+./spring-cloud-api/target
+./spring-cloud-config/target
+./spring-cloud-config-client/target
+./spring-cloud-config-provider/target
+./spring-cloud-consumer/target
+./spring-cloud-consumer-feign/target
+./spring-cloud-eureka/target
+./spring-cloud-hystrix-dashboard/target
+./spring-cloud-provider/target
+./spring-cloud-provider-hystrix/target
+./spring-cloud-sleuth/target
+./spring-cloud-zuul/target
+# 忽略loga
+./spring-cloud-api/logs
+./spring-cloud-config/logs
+./spring-cloud-config-client/logs
+./spring-cloud-config-provider/logs
+./spring-cloud-consumer/logs
+./spring-cloud-consumer-feign/logs
+./spring-cloud-eureka/logs
+./spring-cloud-hystrix-dashboard/logs
+./spring-cloud-provider/logs
+./spring-cloud-provider-hystrix/logs
+./spring-cloud-sleuth/logs
+./spring-cloud-zuul/logs
